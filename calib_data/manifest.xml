@@ -1,0 +1,13 @@
+<package>
+  <description brief="calib_data">
+	Meta package for storing calibration data.
+	These include laser, camera etc. intrinsic
+	and extrinsic paramters.
+  </description>
+  <author>ozaslan</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/calib_data</url>
+</package>
+
+

@@ -1,0 +1,45 @@
+# The device model and robot configuration 
+# with which the below settings can be used.
+device_model: 'Matrix Vision Bluefox ?????'
+robot_conf  : 'Inspection KHex - Top Camera'
+
+is_color: FALSE
+
+# 'dead_regions' gives the path to the mask image which
+# defines the dead regions. In the mask image, white (1 valued)
+# and black (0 valued) pixels correspond to usable and dead
+# regions resp.
+dead_regions: 'path_to_mask_image'
+
+# 'relative_pose' should be a 3-by-4 matrix formed as :=[R|t].
+# 'R' is the rotation from sensor to robot frame. 't' is the
+# translation (in meters) in robot frame.
+relative_pose:
+  rows: 3
+  cols: 4
+  data: [0.0,  0.0, 1.0, 0.0
+		 0.0, -1.0, 0.0, 0.0
+		 1.0,  0.0, 0.0, 0.04]
+
+# 'image_width' and 'image_height' define the resolution at
+# which the camera has been calibrated. 
+image_width: 640
+image_height: 480
+camera_name: narrow_stereo
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [384.837571, 0, 322.698344, 0, 385.302701, 241.060288, 0, 0, 1]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 6
+  data: [0.28274, -0.022176, -0.000556, 0.000309, 0.001578, 0.707602]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [256.497162, 0, 326.060706, 0, 0, 315.963654, 240.517563, 0, 0, 0, 1, 0]
