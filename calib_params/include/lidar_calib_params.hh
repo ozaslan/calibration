@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 #include <Eigen/Dense>
-#include <LidarCalibMsg.h>
+#include <calib_params/LidarCalibMsg.h>
 
 using namespace std;
 
@@ -53,9 +53,12 @@ public:
 	// returns false.
 	bool save(const string &path, bool overwrite = false);
 	// Convert to corresponding ROS message type 
-	bool to_message(calib_params &LidarCalibMsg &msg);
+	bool to_message(calib_params::LidarCalibMsg &msg);
 	// Convert from corresponding ROS message type
-	bool from_message(const calib_params &LidarCalibMsg &msg);	
+	bool from_message(const calib_params::LidarCalibMsg &msg);	
+	// Print the paramters on the std. output
+	bool print();
+
 };
 
 #endif

@@ -12,8 +12,8 @@ max_range: 20.0  #    "
 # For higher distances, the variance increases linearly.
 noise_model:
 	knee_range: 1.0 # in meters
-	var:  0.0001 # in meters^2
-	perc: 0.0001 # in meters^2 / meters
+	var:  0.001 # in meters^2
+	perc: 0.001 # in meters^2 / meters
 
 # 'dead_regions' defines the angle ranges along which data
 # is useless. Entries should be interpretted as an ordered
@@ -22,6 +22,13 @@ noise_model:
 dead_regions:
 	- 0
 	- 0
+
+# '(up/down)wards_mirror_regions' define the ranges along 
+# which the laser beams are redirected to -z/+z diretions
+# in sensor frame. These use the same convention as 
+# 'dead_regions' for interpretation of entries.
+upwards_mirror_regions: []
+downwards_mirror_regions: []
 
 # 'relative_pose' should be a 3-by-4 matrix formed as :=[R|t].
 # 'R' is the rotation from sensor to robot frame. 't' is the
