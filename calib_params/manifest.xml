@@ -1,0 +1,16 @@
+<package>
+  <description brief="calib_params">
+
+     calib_params
+
+  </description>
+  <author>ozaslan</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/calib_params</url>
+  <depend package="roscpp"/>
+  <depend package="opencv2"/>
+  <rosdep name="eigen"/>
+</package>
+
+
