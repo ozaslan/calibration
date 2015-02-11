@@ -29,6 +29,7 @@ rosbuild_add_library(${PROJECT_NAME}	src/camera_calib_params.cc
 										src/lidar_calib_params.cc  
 										src/rgbd_calib_params.cc
 )
+target_link_libraries(${PROJECT_NAME} yaml-cpp)
 #target_link_libraries(${PROJECT_NAME} another_library)
 #rosbuild_add_boost_directories()
 #rosbuild_link_boost(${PROJECT_NAME} thread)

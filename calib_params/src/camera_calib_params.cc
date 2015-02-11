@@ -24,7 +24,7 @@ bool CameraCalibParams::load(const string &path){
 		for(int c = 0 ; c < 4 ; c++)
 			relative_pose(r, c) = node["relative_pose"]["data"][r * 4 + c].as<double>();
 
-	dist_model = node["dist_model"].as<std::string>();
+	dist_model = node["distortion_model"].as<std::string>();
 
 	// "distortion_coefficients" has to be a vector. Its size is dependent
 	// on the camera calibration toolbox and type of the lens.
@@ -84,10 +84,10 @@ bool CameraCalibParams::print(){
 	cout << "is_color       : " << (is_color ? "TRUE" : "FALSE") << endl;
 	cout << "mask_path      : " << mask_path << endl;
 	cout << "dist_coeff     : " << dist_coeff << endl;
-	cout << "camera_matrix  : " << camera_matrix << endl;
+	cout << "camera_matrix  :\n>>" << camera_matrix << endl;
 	cout << "dist_model     : " << dist_model << endl;
 	cout << "image_[w, h]   : "	<< "[" << image_width << ", " << image_height << "]" << endl;
-	cout << "relative_pose  : "	<< relative_pose << endl;
+	cout << "relative_pose  :\n>>"	<< relative_pose << endl;
 	cout << "-----------------------------------------------------" << endl;
 	return true;
 }

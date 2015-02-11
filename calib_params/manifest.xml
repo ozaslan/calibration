@@ -11,6 +11,11 @@
   <depend package="roscpp"/>
   <depend package="opencv2"/>
   <rosdep name="eigen"/>
+  <rosdep name="yaml-cpp" />
+
+	<export>
+        <cpp cflags="-I${prefix}/include " lflags="-L${prefix}/lib -lcalib_params"/> 
+	</export>
 </package>
 
 

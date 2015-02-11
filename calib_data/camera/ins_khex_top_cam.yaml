@@ -1,7 +1,7 @@
 # The device model and robot configuration 
 # with which the below settings can be used.
 device_model: 'Matrix Vision Bluefox ?????'
-robot_conf  : 'Inspection KHex - Top Camera'
+robot_conf: 'Inspection KHex - Top Camera'
 
 is_color: FALSE
 
@@ -17,8 +17,8 @@ dead_regions: 'path_to_mask_image'
 relative_pose:
   rows: 3
   cols: 4
-  data: [0.0,  0.0, 1.0, 0.0
-		 0.0, -1.0, 0.0, 0.0
+  data: [0.0,  0.0, 1.0, 0.0,
+		 0.0, -1.0, 0.0, 0.0,
 		 1.0,  0.0, 0.0, 0.04]
 
 # 'image_width' and 'image_height' define the resolution at
