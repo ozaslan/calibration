@@ -2,6 +2,7 @@
 # with which the below settings can be used.
 device_model: 'Hokuyo UST-20LX'
 robot_conf  : 'Inspection KHex - Top Lidar'
+unique_id   : 'Top Lidar'
 
 # The below values are copied from device manual
 min_range: 0.020 # in meters

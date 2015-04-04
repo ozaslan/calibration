@@ -19,6 +19,8 @@ public:
 	// Name, identifier of the platform/robot on which the sensor is
 	// mounted.
 	string robot_conf;
+	// Identifier string for the device.
+	string unique_id;
 	// Maximum and minimum ranges measurable by the device. This
 	// information should be from the device manual. Range is in
 	// meters.
@@ -57,7 +59,7 @@ public:
 	// Convert from corresponding ROS message type
 	bool from_message(const calib_params::LidarCalibMsg &msg);	
 	// Print the paramters on the std. output
-	const bool print();
+	bool print();
 
 };
 

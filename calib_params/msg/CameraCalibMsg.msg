@@ -10,5 +10,5 @@ int32 image_width
 
 float64[12] relative_pose
 float64[9] camera_matrix
-float64[9] dist_coeff
+float64[9] dist_coeffs
 

@@ -9,8 +9,8 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/calib_params</url>
   <depend package="roscpp"/>
-  <depend package="opencv2"/>
   <rosdep name="eigen"/>
+  <rosdep name="cv_bridge"/>
   <rosdep name="yaml-cpp" />
 
 	<export>
