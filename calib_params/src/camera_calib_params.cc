@@ -24,7 +24,7 @@ bool CameraCalibParams::load(const string &path){
   image_height = node["image_height"].as<int>();
 
   // "relative_pose" matrix has to be 3-by-4
-  relative_pose = Eigen::Matrix4d::Zero();
+  relative_pose = Eigen::Matrix4d::Identity();
   for(int r = 0 ; r < 3 ; r++)
     for(int c = 0 ; c < 4 ; c++)
       relative_pose(r, c) = node["relative_pose"]["data"][r * 4 + c].as<double>();
