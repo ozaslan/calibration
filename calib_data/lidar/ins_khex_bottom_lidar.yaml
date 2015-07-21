@@ -5,7 +5,7 @@ robot_conf  : 'Inspection KHex - Bottom Lidar'
 unique_id   : 'Bottom Lidar'
 
 # The below values are copied from device manual
-min_range: 0.020 # in meters
+min_range: 0.05 # in meters
 max_range: 6.0  #    "
 
 # Noise model recommended by Hokuyo is used.
@@ -22,8 +22,8 @@ noise_model:
 # dead_regions: [] # Use this if list should be empty.
 dead_regions:
     [ -2.35619449019,
-      -1.4835298642,
-      +1.4835298642,
+      -1.835298642,
+      +1.835298642,
       +2.35619449019]
 
 
