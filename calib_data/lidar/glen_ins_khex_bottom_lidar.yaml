@@ -5,7 +5,7 @@ robot_conf  : 'Glen Canyon Dam Inspection KHex - Bottom Lidar'
 unique_id   : 'Bottom Lidar'
 
 # The below values are copied from device manual
-min_range: 0.350 # in meters
+min_range: 0.050 # in meters
 max_range: 19.0  #    "
 
 # Noise model recommended by Hokuyo is used.

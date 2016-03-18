@@ -16,7 +16,7 @@ bool LidarCalibParams::load(const string &path){
 	//cout << "device_mode : " << device_model << endl;
 	robot_conf	 = node["robot_conf"].as<std::string>();
 	//cout << "robot_conf : " << robot_conf << endl;
-  unique_id	 = node["unique_id"].as<std::string>();
+	unique_id	 = node["unique_id"].as<std::string>();
 
 	min_range	 = node["min_range"].as<double>();
 	//cout << "min_range : " << min_range << endl;
@@ -57,7 +57,7 @@ bool LidarCalibParams::load(const string &path){
 bool LidarCalibParams::save(const string &path, bool overwrite){
 	return true;
 }
-	
+
 bool LidarCalibParams::from_message(const calib_params::LidarCalibMsg &msg){
 	return true;
 }
@@ -78,7 +78,7 @@ bool LidarCalibParams::to_message(calib_params::LidarCalibMsg &msg){
 	for(int r = 0 ; r < 3 ; r++)
 		for(int c = 0 ; c < 4 ; c++)
 			msg.relative_pose[r * 4 + c] = relative_pose(r, c);
-	
+
 	return true;
 }
 

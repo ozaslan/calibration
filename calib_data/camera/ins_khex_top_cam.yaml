@@ -19,8 +19,8 @@ relative_pose:
   rows: 3
   cols: 4
   data: [0.0,  1.0, 0.0, 0.0,
-		     1.0,  0.0, 0.0, 0.0,
-		     0.0,  0.0, 1.0, 0.04]
+         -1.0,  0.0, 0.0, 0.0,
+         0.0,  0.0, 1.0, 0.04]
 
 # 'image_width' and 'image_height' define the resolution at
 # which the camera has been calibrated. 

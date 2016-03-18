@@ -45,6 +45,10 @@ bool CameraCalibParams::load(const string &path){
     for(int c = 0 ; c < 3 ; c++)
       camera_matrix.at<double>(r, c) = node["camera_matrix"]["data"][r * 3 + c].as<double>();
 
+  projection_matrix = cv::Mat::zeros(3, 4, CV_64F);
+  for(int r = 0 ; r < 3 ; r++)
+    for(int c = 0 ; c < 4 ; c++)
+      projection_matrix.at<double>(r, c) = node["projection_matrix"]["data"][r * 4 + c].as<double>();
   return true;
 }
 
@@ -70,8 +74,12 @@ bool CameraCalibParams::to_message(calib_params::CameraCalibMsg &msg){
       msg.relative_pose[r * 4 + c] = relative_pose(r, c);
 
   for(int r = 0 ; r < 3 ; r++)
+    for(int c = 0 ; c < 3 ; c++)
+      msg.camera_matrix[r * 3 + c] = camera_matrix.at<double>(r, c);
+
+  for(int r = 0 ; r < 3 ; r++)
     for(int c = 0 ; c < 4 ; c++)
-      msg.camera_matrix[r * 4 + c] = camera_matrix.at<double>(r, c);
+      msg.projection_matrix[r * 4 + c] = projection_matrix.at<double>(r, c);
 
   for(int i = 0 ; i < 9 ; i++)
     msg.dist_coeffs[i] = 0;
@@ -91,6 +99,7 @@ bool CameraCalibParams::print(){
   cout << "mask_path      : " << mask_path << endl;
   cout << "dist_coeffs    : " << dist_coeffs << endl;
   cout << "camera_matrix  :\n>>" << camera_matrix << endl;
+  cout << "proj_matrix    :\n>>" << projection_matrix << endl;
   cout << "dist_model     : " << dist_model << endl;
   cout << "image_[w, h]   : "	<< "[" << image_width << ", " << image_height << "]" << endl;
   cout << "relative_pose  :\n>>"	<< relative_pose << endl;

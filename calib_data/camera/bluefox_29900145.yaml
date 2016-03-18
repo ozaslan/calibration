@@ -1,16 +1,17 @@
 # The device model and robot configuration 
 # with which the below settings can be used.
-device_model: 'Matrix Vision Bluefox ?????'
-robot_conf  : 'Inspection KHex'
-unique_id   : 'Left Camera'
+device_model: 'Matrix Vision Bluefox 29900145'
+robot_conf  : 'Handheld'
+unique_id   : 'bluefox_29900145'
 
-is_color: FALSE
+
+is_color: TRUE
 
 # 'dead_regions' gives the path to the mask image which
 # defines the dead regions. In the mask image, white (1 valued)
 # and black (0 valued) pixels correspond to usable and dead
-# regions resp. The path is relative to the path of this file.
-dead_regions: 'ins_khex_left_cam_mask.png'
+# regions resp. Path is relative to the path of this file.
+dead_regions: 'path_to_mask_image'
 
 # 'relative_pose' should be a 3-by-4 matrix formed as :=[R|t].
 # 'R' is the rotation from sensor to robot frame. 't' is the
@@ -18,9 +19,9 @@ dead_regions: 'ins_khex_left_cam_mask.png'
 relative_pose:
   rows: 3
   cols: 4
-  data: [ 0.0, 1.0, 0.0, 0.00,
-     0.0, 0.0, 1.0, 0.06,
-     1.0, 0.0, 0.0, 0.00]
+  data: [ 1.0, 0.0, 0.0, 0.0,
+          0.0, 1.0, 0.0, 0.0,
+          0.0, 0.0, 1.0, 0.0]
 
 # 'image_width' and 'image_height' define the resolution at
 # which the camera has been calibrated. 
@@ -30,12 +31,12 @@ camera_name: narrow_stereo
 camera_matrix:
   rows: 3
   cols: 3
-  data: [386.557269, 0, 311.507408, 0, 387.469435, 233.29643, 0, 0, 1]
+  data: [303.800544, 0.0, 303.492809, 0.0, 303.478051, 232.599641, 0.0, 0.0, 1.0]
 distortion_model: plumb_bob
 distortion_coefficients:
   rows: 1
   cols: 8
-  data: [0.392918, -0.051675, -0.000108, -0.000674, 0.007423, 0.825919, 0, 0]
+  data: [2.468536, 0.430091, 0.000213, 0.000427, -0.014839, 2.836889, 1.178834, 0.000000]
 rectification_matrix:
   rows: 3
   cols: 3
@@ -43,4 +44,4 @@ rectification_matrix:
 projection_matrix:
   rows: 3
   cols: 4
-  data: [258.027161, 0, 300.158422, 0, 0, 317.75647, 229.63921, 0, 0, 0, 1, 0]
+  data: [176.254318, 0.0, 283.576341, 0.0, 0.0, 231.308365, 227.798167, 0.0, 0.0, 0.0, 1.0, 0.0]

@@ -35,6 +35,7 @@ class CameraCalibParams{
     // matrices. 
     cv::Mat dist_coeffs;		// n-by-1 double vector
     cv::Mat camera_matrix;	// 3-by-3 double matrix
+    cv::Mat projection_matrix; // 3-by-4 double matrix
     // Distortion model of the camera. Depending on this value, 
     // different undistortion funtions can be called (fisheye and 
     // narrow FOV lenses has to be treated differently in some case)
