@@ -1,16 +1,16 @@
 # The device model and robot configuration 
 # with which the below settings can be used.
-device_model: 'Matrix Vision Bluefox ?????'
-robot_conf  : 'Inspection KHex'
-unique_id   : 'Right Camera'
+device_model: 'Chameleon3'
+robot_conf: 'Inspection DJI'
+unique_id : 'Top Left Camera'
 
-is_color: FALSE
+is_color: TRUE
 
 # 'dead_regions' gives the path to the mask image which
 # defines the dead regions. In the mask image, white (1 valued)
 # and black (0 valued) pixels correspond to usable and dead
-# regions resp. PAth is relative to the path of this file
-dead_regions: 'ins_khex_right_cam_mask.png'
+# regions resp. Path is relative to the path of this file.
+dead_regions: 'inspot_top_left_cam_mask.png'
 
 # 'relative_pose' should be a 3-by-4 matrix formed as :=[R|t].
 # 'R' is the rotation from sensor to robot frame. 't' is the
@@ -18,24 +18,24 @@ dead_regions: 'ins_khex_right_cam_mask.png'
 relative_pose:
   rows: 3
   cols: 4
-  data: [-1.0,  0.0  , 0.0  ,  0.00,
-          0.0, -0.707, 0.707,  0.10,
-         -1.0,  0.707, 0.707,  0.05]
+  data: [-1.0,  0.0  , 0.0  , 0.06,
+          0.0, -0.707, 0.707, 0.10,
+          0.0,  0.707, 0.707, 0.00]
 
 # 'image_width' and 'image_height' define the resolution at
 # which the camera has been calibrated. 
-image_width: 640
-image_height: 480
+image_width: 1280
+image_height: 1024
 camera_name: narrow_stereo
 camera_matrix:
   rows: 3
   cols: 3
-  data: [383.091686, 0, 306.597225, 0, 383.307151, 245.028635, 0, 0, 1]
+  data: [470.823077525116958, 0, 633.153047044187929, 0, 472.181707656423271, 504.876853480780881, 0, 0, 1]
 distortion_model: plumb_bob
 distortion_coefficients:
   rows: 1
   cols: 8
-  data: [0.335591, -0.036286, -0.000271, 0.000165, 0.004466, 0.758902, 0, 0]
+  data: [-0.256027775694515, 0.056957312569129, 0.000528877547869, 0.000327399954241, -0.005107629045846, 0, 0, 0 ]
 rectification_matrix:
   rows: 3
   cols: 3
@@ -43,4 +43,4 @@ rectification_matrix:
 projection_matrix:
   rows: 3
   cols: 4
-  data: [255.181595, 0, 292.90202, 0, 0, 314.047241, 246.581452, 0, 0, 0, 1, 0]
+  data: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0 ,0 ,1, 0]
