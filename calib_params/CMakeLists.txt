@@ -102,5 +102,8 @@ add_library(${PROJECT_NAME}	src/camera_calib_params.cc
 										src/lidar_calib_params.cc  
 										src/rgbd_calib_params.cc
 )
+
+add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})
+
 target_link_libraries(${PROJECT_NAME} yaml-cpp)
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
