@@ -1,0 +1,46 @@
+# The device model and robot configuration 
+# with which the below settings can be used.
+device_model: 'Hokuyo UST-20LX'
+robot_conf  : 'Glen Canyon Dam Inspection KHex - Top Lidar'
+unique_id   : 'Top Lidar'
+
+# The below values are copied from device manual
+min_range: 0.15 # in meters
+max_range: 6.0  #    "
+
+# Noise model recommended by Hokuyo is used.
+# Upto a certain range ('knee_range') variance is assumed to be constant
+# For higher distances, the variance increases linearly.
+noise_model:
+    knee_range: 1.0 # in meters
+    var:  0.001 # in meters^2
+    perc: 0.001 # in meters^2 / meters
+
+# 'dead_regions' defines the angle ranges along which data
+# is useless. Entries should be interpretted as an ordered
+# list of start and end angles. Angles are in 'radians'
+# dead_regions: [] # Use this if list should be empty.
+dead_regions: [
+    -2.35619449019,
+    -1.4835298642,
+    -1.0,
+    +1.0,
+	  +1.4835298642,
+    +2.35619449019]
+
+# '(up/down)wards_mirror_regions' define the ranges along 
+# which the laser beams are redirected to -z/+z diretions
+# in sensor frame. These use the same convention as 
+# 'dead_regions' for interpretation of entries.
+upwards_mirror_regions: []
+downwards_mirror_regions: []
+
+# 'relative_pose' should be a 3-by-4 matrix formed as :=[R|t].
+# 'R' is the rotation from sensor to robot frame. 't' is the
+# translation (in meters) in robot frame.
+relative_pose:
+    rows: 3
+    cols: 4
+    data: [1, 0, 0, 0.06,
+	       0, 1, 0, 0.00,
+		   0, 0, 1, 0.07]
